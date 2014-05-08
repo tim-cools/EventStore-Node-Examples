@@ -133,7 +133,7 @@ var save = function (id, version, events, callback) {
 
     if (events.length == 0) {
         logger.log('warn', 'No events to save %s', id);
-        callback && callback(false);
+        return callback && callback(false);
     }
     logger.log('debug', 'Save event %s', id);
 
