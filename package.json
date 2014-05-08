@@ -1,0 +1,15 @@
+{
+    "name": "application-name",
+    "version": "0.0.1",
+    "repository": "https://github.com/tim-cools/eventstore-node-basics",
+    "dependencies" : {
+        "unirest": "0.2.6",
+        "jasmine-node": "*",
+        "async": "0.7.0",
+        "winston": "0.7.3",
+        "lodash": "2.4.1"
+    },
+    "scripts": {
+        "test": "jasmine-node specs --forceexit"
+    }
+}
