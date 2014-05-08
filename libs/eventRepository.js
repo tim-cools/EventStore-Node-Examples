@@ -45,7 +45,7 @@ function load(id, callback) {
 }
 
 function loadUrl(url, responseData, callback) {
-
+    logger.debug('loadUrl: ' + url);
     unirest.get(url)
         .headers({ 'Content-Type': 'application/json' })
         .send()
@@ -118,16 +118,13 @@ function loadLast(id, callback) {
 
 var makePostEvent = function (events, callback) {
 
-    var eventsData = [];
-
-    for (var eventIndex = 0; eventIndex < events.length; eventIndex++) {
-        var event = events[eventIndex];
-        eventsData.push({
+    var eventsData = _.map(events, function(event) {
+        return {
             "eventId": idGenerator.guid(),
             "eventType": event.name,
             "data": event.body
-        });
-    }
+        }
+    });
 
     return JSON.stringify(eventsData);
 };

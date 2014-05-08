@@ -14,7 +14,7 @@ var config = function configConstructor() {
             httpPort: 2113,
             userName: 'admin',
             password: 'changeIt',
-            batchSize: 1
+            batchSize: 5
         }
     }
 }();
